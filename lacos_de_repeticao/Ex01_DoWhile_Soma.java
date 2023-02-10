@@ -20,7 +20,7 @@ public class Ex01_DoWhile_Soma {
 
 		} while (numero != 0);
 
-		System.out.printf("A soma dos números positivos é: %d", soma);
+		System.out.println("A soma dos números positivos é: " + soma);
 
 		leia.close();
 	}

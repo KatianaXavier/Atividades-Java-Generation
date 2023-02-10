@@ -17,10 +17,11 @@ public class Ex01_For_Multiplos {
 		intervalo2 = leia.nextInt();
 
 		if (intervalo1 < intervalo2) {
-			System.out.printf("\nNo intervalo entre %d e %d:\n", intervalo1, intervalo2);
+			System.out.println("No intervalo entre " + intervalo1 + " e " + intervalo2 + ":");
+			
 			for (int contador = intervalo1; contador <= intervalo2; contador++) {
 				if (contador % 3 == 0 && contador % 5 == 0) {
-					System.out.printf("%d é múltiplo de 3 e 5\n", contador);
+					System.out.println(contador + " é múltiplo de 3 e 5");
 				}
 			}
 		} else {

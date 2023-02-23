@@ -57,9 +57,9 @@ public class Ex01_Cliente {
 	}
 
 	public void visualizar() {
-		System.out.println("************************");
-		System.out.println("    Dados do cliente    ");
-		System.out.println("************************");
+		System.out.println("*******************************");
+		System.out.println("        Dados do cliente       ");
+		System.out.println("*******************************");
 		System.out.println("\nID: " + this.id);
 		System.out.println("\nNome: " + this.nome);
 		System.out.println("\nLocalização: " + this.localizacao);

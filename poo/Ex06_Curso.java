@@ -4,15 +4,15 @@ public class Ex06_Curso {
 	
 	private String instituicao;
 	private String curso;
-	private int semestreAtual;
-	private int semestres;
+	private String tipo;
+	private String modalidade;
 	private float mensalidade;
 	
-	public Ex06_Curso(String instituicao, String curso, int semestreAtual, int semestres, float mensalidade) {
+	public Ex06_Curso(String instituicao, String curso, String tipo, String modalidade, float mensalidade) {
 		this.instituicao = instituicao;
 		this.curso = curso;
-		this.semestreAtual = semestreAtual;
-		this.semestres = semestres;
+		this.tipo = tipo;
+		this.modalidade = modalidade;
 		this.mensalidade = mensalidade;
 	}
 
@@ -32,20 +32,20 @@ public class Ex06_Curso {
 		this.curso = curso;
 	}
 
-	public int getSemestreAtual() {
-		return semestreAtual;
+	public String gettipo() {
+		return tipo;
 	}
 
-	public void setSemestreAtual(int semestreAtual) {
-		this.semestreAtual = semestreAtual;
+	public void settipo(String tipo) {
+		this.tipo = tipo;
 	}
 
-	public int getSemestres() {
-		return semestres;
+	public String getmodalidade() {
+		return modalidade;
 	}
 
-	public void setSemestres(int semestres) {
-		this.semestres = semestres;
+	public void setmodalidade(String modalidade) {
+		this.modalidade = modalidade;
 	}
 
 	public float getMensalidade() {
@@ -57,13 +57,13 @@ public class Ex06_Curso {
 	}
 	
 	public void visualizar() {
-		System.out.println("************************");
-		System.out.println("  Dados do curso  ");
-		System.out.println("************************");
+		System.out.println("***************************************************");
+		System.out.println("                  Dados do curso                   ");
+		System.out.println("***************************************************");
 		System.out.println("\nNome da instituição: " + this.instituicao);
 		System.out.println("\nNome do curso: " + this.curso);
-		System.out.println("\nSemestre atual: " + this.semestreAtual + "º");
-		System.out.println("\nSemestres totais do curso: " + this.semestres);
+		System.out.println("\nTipo de curso (livre, graduação, pós-graduação etc) : " + this.tipo);
+		System.out.println("\nModalidade do curso (presencial ou EAD): " + this.modalidade);
 		System.out.println("\nPreço da mensalidade: " + this.mensalidade);
 	}
 	

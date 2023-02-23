@@ -1,6 +1,6 @@
 package poo;
 
-public class Ex04_Farmacia {
+public abstract class Ex04_Farmacia {
 
 	// primeiro declaramos os atributos, informações genéricas
 	private long id;
@@ -9,16 +9,27 @@ public class Ex04_Farmacia {
 	private String fabricante;
 	private String foto;
 	private float preco;
+	private int tipo;
 
 	// método construtor (gerado automaticamente pelo source, sem o super). sempre
 	// tem o mesmo nome da classe!
-	public Ex04_Farmacia(long id, String nome, String nomeComercial, String fabricante, String foto, float preco) {
+	public Ex04_Farmacia(long id, String nome, String nomeComercial, String fabricante, String foto, float preco,
+			int tipo) {
 		this.id = id;
 		this.nome = nome;
 		this.nomeComercial = nomeComercial;
 		this.fabricante = fabricante;
 		this.foto = foto;
 		this.preco = preco;
+		this.tipo = tipo;
+	}
+
+	public int getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(int tipo) {
+		this.tipo = tipo;
 	}
 
 	// getters e setters. o get sempre retorna um valor com o mesmo atributo. o set
@@ -71,8 +82,19 @@ public class Ex04_Farmacia {
 		this.preco = preco;
 	}
 
+	//método abstrato só pode ser criado em classe abstrata
+	public abstract void reajuste(float percentual);
+	
 	// método visualizar para ver todos os dados do objeto
 	public void visualizar() {
+
+		String tipo = "";
+
+		switch (this.tipo) {
+		case 1 -> tipo = "Medicamento";
+		case 2 -> tipo = "Perfumaria";
+		}
+
 		System.out.println("************************");
 		System.out.println("    Dados do produto    ");
 		System.out.println("************************");
@@ -82,6 +104,7 @@ public class Ex04_Farmacia {
 		System.out.println("\nFabricante: " + this.fabricante);
 		System.out.println("\nFoto: " + this.foto);
 		System.out.println("\nPreço: " + this.preco);
+		System.out.println("\nTipo: " + tipo);
 	}
 
 }

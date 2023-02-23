@@ -57,9 +57,9 @@ public class Ex02_Funcionario {
 	}
 	
 	public void visualizar() {
-		System.out.println("************************");
-		System.out.println("  Dados do funcionário  ");
-		System.out.println("************************");
+		System.out.println("****************************");
+		System.out.println("    Dados do funcionário    ");
+		System.out.println("****************************");
 		System.out.println("\nNome: " + this.nome);
 		System.out.println("\nE-mail: " + this.email);
 		System.out.println("\nEndereço: " + this.endereco);

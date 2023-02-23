@@ -57,9 +57,9 @@ public class Ex03_Produto {
 	}
 
 	public void visualizar() {
-		System.out.println("************************");
-		System.out.println("  Dados do produto  ");
-		System.out.println("************************");
+		System.out.println("********************************");
+		System.out.println("         Dados do produto       ");
+		System.out.println("********************************");
 		System.out.println("\nNome do produto: " + this.nome);
 		System.out.println("\nFabricante: " + this.fabricante);
 		System.out.println("\nCor: " + this.cor);

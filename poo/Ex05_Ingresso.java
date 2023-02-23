@@ -58,12 +58,12 @@ public class Ex05_Ingresso {
 	
 	public void visualizar() {
 		System.out.println("************************");
-		System.out.println("  Dados do ingresso  ");
+		System.out.println("    Dados do ingresso   ");
 		System.out.println("************************");
 		System.out.println("\nNome do evento: " + this.evento);
 		System.out.println("\nNome do estabelecimento: " + this.estabelecimento);
 		System.out.println("\nLugar reservado: " + this.lugar);
-		System.out.println("\nIngresso meia? (T - sim | F - não): " + this.meia);
+		System.out.println("\nIngresso meia? " + this.meia);
 		System.out.println("\nPreço: " + this.preco);
 	}
 

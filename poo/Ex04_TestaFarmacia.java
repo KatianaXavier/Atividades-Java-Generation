@@ -11,12 +11,13 @@ public class Ex04_TestaFarmacia {
 		Scanner leia = new Scanner(System.in);
 
 		// collection
-		ArrayList<Ex04_Farmacia> medicamentos = new ArrayList<Ex04_Farmacia>();
+		ArrayList<Ex04_Farmacia> farmacia = new ArrayList<Ex04_Farmacia>();
 
 		// variáveis que receberão dados a serem digitados
 		long id;
-		String nome, nomeComercial, fabricante, foto, opcao;
+		String nome, nomeComercial, fabricante, foto, opcao, principioAtivo, fragancia;
 		float preco;
+		int tipo;
 
 		do {
 			// entrada de dados
@@ -39,11 +40,31 @@ public class Ex04_TestaFarmacia {
 			System.out.println("\nPreço: ");
 			preco = leia.nextFloat();
 
-			// gerando o objeto da classe Ex04_Farmacia com os parâmetros que serão entrados
-			Ex04_Farmacia f1 = new Ex04_Farmacia(id, nome, nomeComercial, fabricante, foto, preco);
+			System.out.println("\nTipo: ");
+			tipo = leia.nextInt();
 
-			// adiciona o objeto dentro da collection
-			medicamentos.add(f1);
+			switch (tipo) {
+			case 1 -> {
+				System.out.println("\nPrincípio ativo: ");
+				leia.skip("\\R?");
+				principioAtivo = leia.nextLine();
+
+				Ex04_Medicamento m1 = new Ex04_Medicamento(id, nome, nomeComercial, fabricante, foto, preco, tipo,
+						principioAtivo);
+
+				farmacia.add(m1);
+			}
+			case 2 -> {
+				System.out.println("\nFragância: ");
+				leia.skip("\\R?");
+				fragancia = leia.nextLine();
+
+				Ex04_Perfumaria p1 = new Ex04_Perfumaria(id, nome, nomeComercial, fabricante, foto, preco, tipo, fragancia);
+
+				// adiciona o objeto dentro da collection
+				farmacia.add(p1);
+			}
+			}
 
 			System.out.println("\nDeseja continuar? ");
 			leia.skip("\\R?");
@@ -51,15 +72,10 @@ public class Ex04_TestaFarmacia {
 
 		} while (opcao.equalsIgnoreCase("S"));
 
-		for (var medicamento : medicamentos)
-			medicamento.visualizar();
-		// Ex04_Farmacia f2 = new Ex04_Farmacia(2, "Paracetamol", "Tylenol", "Neo
-		// Química", "foto2.jpg", 20.0f);
-
-		// chamando método visualizar da classe Ex04_Farmacia
-		// f1.visualizar();
-
-		// f2.visualizar();
+		for (var produto : farmacia) {
+			produto.reajuste(0.10f);
+			produto.visualizar();
+		}
 
 		leia.close();
 
